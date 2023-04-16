@@ -14,7 +14,7 @@ import com.ereyes.coinpaprika.domain.model.Coin
 class CoinViewHolder(view: View): ViewHolder(view) {
     private val binding = ItemCoinBinding.bind(view)
     fun sender(coin: Coin){
-        binding.tvRank.text = coin.Rank.toString()
         binding.tvName.text = coin.getNameComplete()
+        binding.tvActive.text = coin.getIsActiveString()
     }
 }

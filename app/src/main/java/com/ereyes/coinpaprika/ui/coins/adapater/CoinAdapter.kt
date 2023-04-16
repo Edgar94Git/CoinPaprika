@@ -13,7 +13,7 @@ import com.ereyes.coinpaprika.domain.model.Coin
  * All rights reserved 2023.
  ****/
 
-class CoinAdapter(private val coins: List<Coin>, private val onCoinSelected: (Coin) -> Unit)
+class CoinAdapter(private var coins: List<Coin>, private val onCoinSelected: (Coin) -> Unit)
     : RecyclerView.Adapter<CoinViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoinViewHolder {
@@ -30,4 +30,9 @@ class CoinAdapter(private val coins: List<Coin>, private val onCoinSelected: (Co
     }
 
     override fun getItemCount() = coins.size
+
+    fun updateListCoin(coins: List<Coin>){
+        this.coins = coins
+        notifyDataSetChanged()
+    }
 }

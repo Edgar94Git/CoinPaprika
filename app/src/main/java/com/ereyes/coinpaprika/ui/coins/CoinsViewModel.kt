@@ -18,12 +18,8 @@ import javax.inject.Inject
  ****/
 @HiltViewModel
 class CoinsViewModel @Inject constructor(
-    private val getCoinsUseCase: GetCoinsUseCase
+    val getCoinsUseCase: GetCoinsUseCase
 ): ViewModel() {
-
-    init {
-        getAllCoins()
-    }
 
     private val messages: MutableLiveData<String> = MutableLiveData<String>()
     fun getMessages(): MutableLiveData<String> = messages
@@ -33,12 +29,13 @@ class CoinsViewModel @Inject constructor(
 
     private val result: MutableLiveData<List<Coin>> = MutableLiveData<List<Coin>>()
     fun getResult(): MutableLiveData<List<Coin>> = result
-    private fun getAllCoins(){
+    fun getAllCoins(){
         viewModelScope.launch {
             try {
                 loaded.value = Constants.SHOW
                 val resultServer = getCoinsUseCase()
-                result.value = resultServer
+                if(resultServer != null)
+                    result.value = resultServer!!
             }
             catch (e: Exception){
                 messages.value = e.message

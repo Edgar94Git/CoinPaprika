@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="8dp"
     android:layout_marginTop="8dp"
+    app:cardBackgroundColor="@color/background_card"
     app:cardCornerRadius="16dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,25 +15,28 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/tvRank"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:layout_marginHorizontal="8dp"
+            android:textColor="@color/white"
             android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/tvActive"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="1" />
+            tools:text="Bitcoin" />
 
         <TextView
-            android:id="@+id/tvName"
+            android:id="@+id/tvActive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Bitcoin"
-            android:textColor="@color/black"
+            android:layout_marginEnd="8dp"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
             android:textSize="16sp"
-            android:layout_marginHorizontal="8dp"
-            app:layout_constraintStart_toEndOf="@id/tvRank"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Activo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
