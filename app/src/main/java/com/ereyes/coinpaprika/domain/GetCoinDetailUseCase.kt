@@ -11,7 +11,7 @@ import javax.inject.Inject
  * All rights reserved 2023.
  ****/
 class GetCoinDetailUseCase @Inject constructor(private val repository: CoinRepository) {
-    suspend operator fun invoke(): CoinDetail {
-        return repository.getCoinDetail("btc-bitcoin")
+    suspend operator fun invoke(id: String): CoinDetail {
+        return repository.getCoinDetail(id)
     }
 }

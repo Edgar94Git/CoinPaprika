@@ -59,7 +59,8 @@ class CoinsFragment : Fragment() {
         fragment.arguments = arguments
 
         parentFragmentManager.beginTransaction()
-            .replace(R.id.host_container_main, CoinDetailFragment())
+            .replace(R.id.host_container_main, fragment)
+            .addToBackStack(null)
             .commit()
     }
 

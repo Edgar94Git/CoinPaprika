@@ -30,11 +30,11 @@ class CoinDetailViewModel @Inject constructor(
     private val message: MutableLiveData<String> = MutableLiveData<String>()
     fun getMessage(): MutableLiveData<String> = message
 
-    fun getCoinDetail(){
+    fun getCoinDetail(id: String){
         viewModelScope.launch {
             try {
                 loaded.value = Constants.SHOW
-                val result = getCoinDetailUseCase()
+                val result = getCoinDetailUseCase(id)
                 coinDetail.value = result
             }
             catch (e: Exception){

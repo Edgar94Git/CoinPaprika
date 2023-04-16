@@ -29,7 +29,7 @@ class CoinDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpObservers()
-        viewModel.getCoinDetail()
+        viewModel.getCoinDetail(idCoin)
     }
 
     private fun setUpObservers() {
@@ -40,7 +40,7 @@ class CoinDetailFragment : Fragment() {
 
         }
         viewModel.getResultCoinDetail().observe(viewLifecycleOwner){ coinDetail ->
-
+            binding.tvName.text = coinDetail.Name
         }
     }
 }
