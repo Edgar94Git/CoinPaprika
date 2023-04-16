@@ -1,6 +1,8 @@
 package com.ereyes.coinpaprika.data.network
 
 import com.ereyes.coinpaprika.data.model.CoinModel
+import com.ereyes.coinpaprika.data.model.coinDetail.CoinDetailModel
+import com.ereyes.coinpaprika.domain.model.CoinDetail
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -15,5 +17,9 @@ class CoinService @Inject constructor(private val api: CoinApiClient) {
 
     suspend fun getCoins(): List<CoinModel> = withContext(Dispatchers.IO){
         api.getCoins()
+    }
+
+    suspend fun getCoinDetail(id: String): CoinDetailModel = withContext(Dispatchers.IO){
+        api.getCoinDetail(id)
     }
 }

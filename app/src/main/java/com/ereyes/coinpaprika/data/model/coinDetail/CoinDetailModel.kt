@@ -1,5 +1,7 @@
 package com.ereyes.coinpaprika.data.model.coinDetail
 
+import com.ereyes.coinpaprika.domain.model.CoinDetail
+
 data class CoinDetailModel(
     val description: String,
     val development_status: String,

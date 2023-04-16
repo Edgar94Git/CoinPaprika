@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ereyes.coinpaprika.R
 import com.ereyes.coinpaprika.databinding.FragmentCoinsBinding
 import com.ereyes.coinpaprika.domain.model.Coin
+import com.ereyes.coinpaprika.ui.coinDetail.CoinDetailFragment
 import com.ereyes.coinpaprika.ui.coins.adapater.CoinAdapter
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
@@ -50,7 +51,16 @@ class CoinsFragment : Fragment() {
     }
 
     private fun onCoinSelected(coin: Coin){
-        Snackbar.make(binding.root, coin.Id, Snackbar.LENGTH_SHORT).show()
+
+        val arguments = Bundle()
+        arguments.putString("id", coin.Id)
+
+        val fragment = CoinDetailFragment()
+        fragment.arguments = arguments
+
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.host_container_main, CoinDetailFragment())
+            .commit()
     }
 
 }
