@@ -8,4 +8,6 @@ package com.ereyes.coinpaprika.common
  ****/
 object Constants {
     const val BASE_URL = "https://api.coinpaprika.com/"
+    const val SHOW = true
+    const val HIDE = false
 }
