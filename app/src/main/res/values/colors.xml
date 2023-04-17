@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background_card">#222222</color>
     <color name="background">#111111</color>
+    <color name="green">#A4DE02</color>
 </resources>
