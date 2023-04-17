@@ -21,7 +21,7 @@ data class Coin(
         return "$Name ($Symbol)"
     }
 
-    fun getIsActiveString(): String = if(IsActive) "Activo" else "Desactivo"
+    fun getIsActiveString(): String = if(IsActive) "active" else "inactive"
 }
 
 fun CoinModel.toDomain() = Coin(
