@@ -1,7 +1,7 @@
 package com.ereyes.coinpaprika.data
 
 import com.ereyes.coinpaprika.data.model.CoinModel
-import com.ereyes.coinpaprika.data.model.coinDetail.CoinDetailModel
+import com.ereyes.coinpaprika.data.model.CoinDetailModel
 import com.ereyes.coinpaprika.data.network.CoinService
 import com.ereyes.coinpaprika.domain.model.Coin
 import com.ereyes.coinpaprika.domain.model.CoinDetail

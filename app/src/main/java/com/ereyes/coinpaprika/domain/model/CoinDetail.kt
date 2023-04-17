@@ -1,8 +1,6 @@
 package com.ereyes.coinpaprika.domain.model
 
-import android.util.Log
-import com.ereyes.coinpaprika.data.model.coinDetail.CoinDetailModel
-import java.util.jar.Attributes.Name
+import com.ereyes.coinpaprika.data.model.CoinDetailModel
 
 /****
  * Project: CoinPaprika
@@ -18,7 +16,13 @@ data class CoinDetail(
     val Rank: Int,
     val IsActive: Boolean,
     val Logo: String
-)
+) {
+    fun getNameComplete(): String {
+        return "$Name ($Symbol)"
+    }
+
+    fun getIsActiveString(): String = if(IsActive) "active" else "inactive"
+}
 
 fun CoinDetailModel.toDomain() = CoinDetail(
     Id = id,

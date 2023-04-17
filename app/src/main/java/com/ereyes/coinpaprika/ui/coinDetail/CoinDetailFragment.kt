@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.ereyes.coinpaprika.databinding.FragmentCoinDetailBinding
+import com.ereyes.coinpaprika.domain.model.CoinDetail
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -40,7 +41,14 @@ class CoinDetailFragment : Fragment() {
 
         }
         viewModel.getResultCoinDetail().observe(viewLifecycleOwner){ coinDetail ->
-            binding.tvName.text = coinDetail.Name
+            loadedData(coinDetail)
         }
+    }
+
+    private fun loadedData(coinDetail: CoinDetail) {
+        binding.tvName.text = coinDetail.getNameComplete()
+        binding.tvRank.text = coinDetail.Rank.toString()
+        binding.tvActive.text = coinDetail.getIsActiveString()
+        binding.tvDescription.text = coinDetail.Description
     }
 }

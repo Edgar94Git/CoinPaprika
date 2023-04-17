@@ -1,4 +1,4 @@
-package com.ereyes.coinpaprika.data.model.coinDetail
+package com.ereyes.coinpaprika.data.model
 
 data class Tag(
     val coin_counter: Int,

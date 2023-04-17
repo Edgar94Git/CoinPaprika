@@ -1,8 +1,7 @@
 package com.ereyes.coinpaprika.data.network
 
 import com.ereyes.coinpaprika.data.model.CoinModel
-import com.ereyes.coinpaprika.data.model.coinDetail.CoinDetailModel
-import com.ereyes.coinpaprika.domain.model.CoinDetail
+import com.ereyes.coinpaprika.data.model.CoinDetailModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

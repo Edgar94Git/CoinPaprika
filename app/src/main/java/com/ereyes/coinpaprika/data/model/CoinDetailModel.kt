@@ -1,6 +1,4 @@
-package com.ereyes.coinpaprika.data.model.coinDetail
-
-import com.ereyes.coinpaprika.domain.model.CoinDetail
+package com.ereyes.coinpaprika.data.model
 
 data class CoinDetailModel(
     val description: String,
