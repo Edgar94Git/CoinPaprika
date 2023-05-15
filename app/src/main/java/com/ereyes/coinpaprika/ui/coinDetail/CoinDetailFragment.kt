@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.ereyes.coinpaprika.common.Constants
@@ -39,7 +40,7 @@ class CoinDetailFragment : Fragment() {
             Snackbar.make(binding.root, msg, Snackbar.LENGTH_LONG).show()
         }
         viewModel.isLoaded().observe(viewLifecycleOwner){ isLoaded ->
-
+            binding.pbLoadedDetailCoin.isVisible = isLoaded
         }
         viewModel.getResultCoinDetail().observe(viewLifecycleOwner){ coinDetail ->
             loadedData(coinDetail)

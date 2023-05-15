@@ -25,6 +25,11 @@ class CoinsFragment : Fragment() {
     private lateinit var binding: FragmentCoinsBinding
     private lateinit var coinAdapter: CoinAdapter
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.getAllCoins()
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentCoinsBinding.inflate(inflater, container, false)
         return binding.root
@@ -34,7 +39,6 @@ class CoinsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setUpObservers()
         setUpAdapters()
-        viewModel.getAllCoins()
     }
 
     private fun setUpAdapters() {
