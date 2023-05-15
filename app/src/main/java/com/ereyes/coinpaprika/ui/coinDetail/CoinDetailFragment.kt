@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.ereyes.coinpaprika.common.Constants
 import com.ereyes.coinpaprika.databinding.FragmentCoinDetailBinding
 import com.ereyes.coinpaprika.domain.model.CoinDetail
 import com.google.android.material.snackbar.Snackbar
@@ -20,7 +21,7 @@ class CoinDetailFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        idCoin = arguments?.getString("id") ?: ""
+        idCoin = arguments?.getString(Constants.ID) ?: ""
     }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentCoinDetailBinding.inflate(inflater, container, false)
